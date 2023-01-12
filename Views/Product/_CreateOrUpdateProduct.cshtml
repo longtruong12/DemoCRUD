@@ -1,0 +1,55 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model CRUDApp.Models.Product
+
+<form role="form" class="form-horizontal" id="formProduct">
+    <input type="hidden" asp-for="Id" value="@Model.Id" />
+    <div class="modal-body">
+        <div>
+            <h1>Create Product</h1>
+        </div>
+        <div class="row">
+            <!-- Input -->
+            <div class="col-sm-12 mb-12">
+                <div class="form-group">
+                    <label asp-for="Name" class="col-md control-label">Name</label>
+                    <input type="text" asp-for="Name" value="@Model.Name" />
+                    <br />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Descreption" class="col-md control-label">Descreption</label>
+                    <input type="text" asp-for="Descreption" value="@Model.Descreption" />
+                    <br />
+                    <span asp-validation-for="Descreption" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CategoryId" class="col-md control-label">Category</label>
+                    <select asp-for="CategoryId" class="col-md control-label" asp-items="@ViewBag.ItemsCategory">
+                        @*@foreach(var cat in Model.categories) {
+                            <option value="@cat.Id" >@cat.Name</option>
+                        }*@
+                    </select>
+                    @*<input type="number" asp-for="Product.CategoryId" value="@Model.Product.CategoryId" />*@
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+            </div>
+            <!-- End Input -->
+            <!-- End Input -->
+        </div>
+    </div>
+    @*end tab-content*@
+
+    <div class="modal-footer">
+        <div class="float-sm-right">
+            <button type="button" class="btn btn-success" onclick="createOrUpdateProduct()"><i class="fas fa-save"></i>Save</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancel</button>
+        </div>
+    </div>
+</form>
+@section Scripts {
+
+    <script src="~/js/product.js"></script>
+}

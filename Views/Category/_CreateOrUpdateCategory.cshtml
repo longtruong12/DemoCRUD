@@ -1,0 +1,45 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model CRUDApp.Models.Category
+
+<form role="form" class="form-horizontal" id="formCategory">
+    <input type="hidden" asp-for="Id" value="@Model.Id" />
+    <div class="modal-body">
+        <div>
+            <h1>Create Category</h1>
+        </div>
+        <div class="row">
+            <!-- Input -->
+            <div class="col-sm-12 mb-12">
+                <div class="form-group">
+                    <label asp-for="Name" class="col-md control-label">Name</label>
+                    <input type="text" asp-for="Name" value="@Model.Name" />
+                    <br />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Status" class="col-md control-label">Status</label>
+                    <select asp-for="Status" class="col-md control-label">
+                        <option value="0" >Ennable</option>
+                        <option value="1" >Disable</option>
+                    </select>
+                    @*<input type="number" asp-for="Status" value="@Model.Status" /> *@
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+            </div>
+            <!-- End Input -->
+            <!-- End Input -->
+        </div>
+    </div>
+    @*end tab-content*@
+
+    <div class="modal-footer">
+        <div class="float-sm-right">
+            <button type="button" class="btn btn-success" onclick="createOrUpdateCategory()"><i class="fas fa-save"></i>Save</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancel</button>
+        </div>
+    </div>
+</form>
+@*<script src="~/js/site.js" asp-append-version="true"></script>*@

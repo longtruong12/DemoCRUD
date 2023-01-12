@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+*@
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Product</h2>
+
+<p><button type="button" class="btn btn-sm btn-success" onclick="getProduct()">Add Product</button></p>
+<table class="table table-hover" id="tableProduct">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Descreption</th>
+            <th>Category</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="modalProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" id="contentModalProduct">
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalDeleteProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" id="contentDeleteModalProduct">
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script src="~/js/product.js"></script>
+}

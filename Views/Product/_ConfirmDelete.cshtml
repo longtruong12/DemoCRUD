@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+   
+}
+@model CRUDApp.Models.Product
+
+<form role="form" class="form-horizontal" id="formDeleteCategory">
+    <input type="hidden" asp-for="Id" value="@Model.Id" />
+    <div class="modal-body">
+        <div class="row">
+            <!-- Input -->
+            <div class="col-sm-12 mb-12">
+                <div class="form-group">
+                    <label class="h6 small d-block text-uppercase">
+                        Are you sure?
+                        <span class="text-danger">*</span>
+                    </label>
+                </div>
+            </div>
+            <!-- End Input -->
+            <!-- End Input -->
+        </div>
+    </div>
+    @*end tab-content*@
+
+    <div class="modal-footer">
+        <div class="float-sm-right">
+            <button type="button" class="btn btn-danger" onclick="deleteProductPost(@Model.Id)"><i class="fas fa-save"></i>Delete</button>
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancel</button>
+        </div>
+    </div>
+</form>
